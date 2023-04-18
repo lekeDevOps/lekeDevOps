@@ -30,12 +30,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      # set to GMT timezone
-      - uses: szenius/set-timezone@v1.2
-        with:
-         timezoneLinux: "Europe/London"
-         timezoneMacos: "Europe/London"
-         timezoneWindows: "Greenwich Mean Time"
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
