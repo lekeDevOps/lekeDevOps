@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v3
       # set to GMT timezone
       - uses: szenius/set-timezone@v1.2
-      - with:
+        with:
          timezoneLinux: "Europe/London"
          timezoneMacos: "Europe/London"
          timezoneWindows: "Greenwich Mean Time"
