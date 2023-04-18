@@ -1,15 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 name: CI
-  uses: szenius/set-timezone@v1.2
-  with:
-    timezoneLinux: "Europe/London"
-    timezoneMacos: "Europe/London"
-    timezoneWindows: "Greenwich Mean Time"
-
 # Controls when the workflow will run
 on:
   schedule:
-   - cron: "23 15 * * 1-5"
+   - cron: "28 15 * * 1-5"
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
