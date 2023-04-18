@@ -1,3 +1,11 @@
 on:
   schedule:
-    - cron: '30 5,15 * * *'     
+    - cron: '30 5,15 * * *'
+name: build
+jobs:
+   build:
+    name: example
+    runs-on: ubuntu-latest
+    steps:
+     - id: getTimestamp
+     - run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
