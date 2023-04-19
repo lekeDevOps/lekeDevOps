@@ -21,7 +21,7 @@ env:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # if: ${{ env.BST_ENV_VAR }} != ${{ env.UTC_ENV_VAR }}
+    if: ${{ env.BST_ENV_VAR != env.UTC_ENV_VAR }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
