@@ -30,13 +30,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       # Runs BST time command using the runners shell
-      - name: Run a one-line script
-        run: echo ${{ env.BST_ENV_VAR }} >> $GITHUB_ENV
-      - name: Echo current date
-        run: echo $NOW
+      - name: BST ENV VAR
+        run: echo ${{ env.BST_ENV_VAR }}
 
       # Runs UTC time command using the runners shell
-      - name: Run a one-line script
-        run: echo ${{ env.UTC_ENV_VAR }} >> $GITHUB_ENV
-      - name: Echo current date
-        run: echo $NOW
+      - name: UTC ENV VAR
+        run: echo ${{ env.UTC_ENV_VAR }}
