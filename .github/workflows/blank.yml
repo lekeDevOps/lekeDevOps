@@ -29,10 +29,10 @@ jobs:
         
       # Runs BST time command using the runners shell
       - name: BST ENV VAR
-        if: ${{ $BST_ENV_VAR == $UTC_ENV_VAR }}
+        if: ${{ env.BST_ENV_VAR == env.UTC_ENV_VAR }}
         run: echo "IT IS WINTER TIME"
 
       # Runs UTC time command using the runners shell
       - name: UTC ENV VAR
-        if: ${{ $BST_ENV_VAR != $UTC_ENV_VAR }}
+        if: ${{ env.BST_ENV_VAR != env.UTC_ENV_VAR }}
         run: echo "IT IS SUMMER TIME"
