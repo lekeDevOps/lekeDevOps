@@ -9,10 +9,14 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
+    
+# Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     
+env:
+   BST_ENV_VAR: $(TZ='Europe/London' date)
+   UTC_ENV_VAR: $(date)
+   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
