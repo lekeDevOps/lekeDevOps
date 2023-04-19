@@ -8,26 +8,24 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
-    
+    branches: [ "main" ]    
 # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    
-env:
-   BST_ENV_VAR: ${{ TZ='Europe/London' date }}
-   UTC_ENV_VAR: ${{ date }}
-   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    # if: $BST_ENV_VAR == ''
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      # set the environment variables
+      - name: SET BST ENV VAR
+        run: echo "BST_ENV_VAR=$(TZ='Europe/London' date)" >> $GITHUB_ENV
+      - name: SET UTC ENV VAR
+        run: echo "UTC_ENV_VAR=$(date)" >> $GITHUB_ENV        
       # Runs BST time command using the runners shell
       - name: BST ENV VAR
         run: echo $BST_ENV_VAR
