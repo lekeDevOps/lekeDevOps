@@ -25,11 +25,14 @@ jobs:
       - name: SET BST ENV VAR
         run: echo "BST_ENV_VAR=$(TZ='Europe/London' date)" >> $GITHUB_ENV
       - name: SET UTC ENV VAR
-        run: echo "UTC_ENV_VAR=$(date)" >> $GITHUB_ENV        
+        run: echo "UTC_ENV_VAR=$(date)" >> $GITHUB_ENV 
+        
       # Runs BST time command using the runners shell
       - name: BST ENV VAR
-        run: echo $BST_ENV_VAR
+        if: ${{ $BST_ENV_VAR == $UTC_ENV_VAR }}
+        run: echo "IT IS WINTER TIME"
 
       # Runs UTC time command using the runners shell
       - name: UTC ENV VAR
-        run: echo $UTC_ENV_VAR
+        if: ${{ $BST_ENV_VAR != $UTC_ENV_VAR }}
+        run: echo "IT IS SUMMER TIME"
