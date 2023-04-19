@@ -40,14 +40,14 @@ jobs:
             curl -L \
             -X PUT \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer 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"\
+            -H "Authorization: Bearer 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"\
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/lekeDevOps/lekeDevOps/actions/workflows/54820689/enable
             
             curl -L \
             -X PUT \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer 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"\
+            -H "Authorization: Bearer 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"\
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/lekeDevOps/lekeDevOps/actions/workflows/54820804/disable
             
