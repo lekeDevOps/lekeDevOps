@@ -22,7 +22,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
 
-    if: $UTC_ENV_VAR == $BST_ENV_VAR
+    if: UTC_ENV_VAR == BST_ENV_VAR
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
