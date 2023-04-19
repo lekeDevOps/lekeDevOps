@@ -27,12 +27,12 @@ jobs:
       - name: SET UTC ENV VAR
         run: echo "UTC_ENV_VAR=$(date)" >> $GITHUB_ENV 
         
-      # Runs BST time command using the runners shell
-      - name: BST ENV VAR
+      # Runs DAYLIGHT SAVING FALSE command using the runners shell
+      - name: IT IS NOT DAYLIGHT SAVING
         if: ${{ env.BST_ENV_VAR == env.UTC_ENV_VAR }}
         run: echo "IT IS WINTER TIME"
 
-      # Runs UTC time command using the runners shell
-      - name: UTC ENV VAR
+      # Runs DAYLIGHT SAVING TRUE using the runners shell
+      - name: IT IS DAYLIGHT SAVING
         if: ${{ env.BST_ENV_VAR != env.UTC_ENV_VAR }}
         run: echo "IT IS SUMMER TIME"
