@@ -35,4 +35,10 @@ jobs:
       # Runs DAYLIGHT SAVING TRUE using the runners shell
       - name: IT IS DAYLIGHT SAVING
         if: ${{ env.BST_ENV_VAR != env.UTC_ENV_VAR }}
-        run: echo "IT IS SUMMER TIME"
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl --request GET \
+          --url "https://api.github.com/repos/octocat/Spoon-Knife/issues" \
+          --header "Accept: application/vnd.github+json" \
+          --header "Authorization: Bearer $GH_TOKEN"
