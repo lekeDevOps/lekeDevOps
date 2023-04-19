@@ -16,13 +16,12 @@ on:
 env:
   BST_ENV_VAR: $(TZ='Europe/London' date)
   UTC_ENV_VAR: $(date)
-  
+    
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
-
-    if: ${{ env.UTC_ENV_VAR == env.BST_ENV_VAR }}
+    # if: ${{ env.UTC_ENV_VAR == env.BST_ENV_VAR }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -32,12 +31,12 @@ jobs:
       - uses: actions/checkout@v3
       # Runs BST time command using the runners shell
       - name: Run a one-line script
-        run: echo "NOW=$(TZ='Europe/London' date)" >> $GITHUB_ENV
+        run: echo ${{ env.BST_ENV_VAR }} >> $GITHUB_ENV
       - name: Echo current date
-        run: echo $NOW # Gives "2022-12-11T01:42:20"
+        run: echo $NOW
 
       # Runs UTC time command using the runners shell
       - name: Run a one-line script
-        run: echo "NOW=$(date)" >> $GITHUB_ENV
+        run: echo ${{ env.UTC_ENV_VAR }} >> $GITHUB_ENV
       - name: Echo current date
-        run: echo $NOW # Gives "2022-12-11T01:42:20"
+        run: echo $NOW
