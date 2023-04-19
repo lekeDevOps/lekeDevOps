@@ -13,11 +13,16 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  BST_ENV_VAR: $(TZ='Europe/London' date)
+  UTC_ENV_VAR: $(date)
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
-    if: (TZ='Europe/London' date) == (date)
+
+    if: $UTC_ENV_VAR == $BST_ENV_VAR
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
