@@ -14,8 +14,8 @@ on:
   workflow_dispatch:
     
 env:
-   BST_ENV_VAR: ${{ $(TZ='Europe/London' date) }}
-   UTC_ENV_VAR: ${{ $(date) }}
+   BST_ENV_VAR: ${{ TZ='Europe/London' date }}
+   UTC_ENV_VAR: ${{ date }}
    
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
