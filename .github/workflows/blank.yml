@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # set the environment variables
       - name: SET BST ENV VAR
         run: echo "BST_ENV_VAR=$(TZ='Europe/London' date)" >> $GITHUB_ENV
