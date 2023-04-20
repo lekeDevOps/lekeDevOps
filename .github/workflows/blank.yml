@@ -22,8 +22,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-        with:
-         repo-token: ${{ secrets.GITHUB_TOKEN }}
       # set the environment variables
       - name: SET BST ENV VAR
         run: echo "BST_ENV_VAR=$(TZ='Europe/London' date)" >> $GITHUB_ENV
