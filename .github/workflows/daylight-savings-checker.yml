@@ -3,14 +3,14 @@ name: DAYLIGHT SAVINGS CHECKER
 on:
   schedule:
    - cron: "0 0 1 4,11 *"
-    
+ 
+# Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-
       - uses: actions/checkout@v3
       # set the environment variables
       - name: SET BST ENV VAR
